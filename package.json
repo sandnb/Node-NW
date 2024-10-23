@@ -1,0 +1,19 @@
+{
+  "name": "ns",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node finalAPI.js",
+    "dev": "nodemon finalAPI.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "short-uuid": "^5.2.0"
+  }
+}
