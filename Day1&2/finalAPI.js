@@ -48,7 +48,23 @@ app.use(function(req,res,next){// checklist if we are sending the empty data or 
 })
 
 // to create a user
-app.post("/api/user",function(req,res){
+app.post("/api/user",createUserHandler);
+
+// to get user based on id -> template route
+app.get("/api/user/:userId",getUserById)
+
+function getUserByid(id){
+    const user = userDataStore.find(user=>{
+        return user.id == id; 
+    })
+    if(user == undefined){
+        return "no user found";
+    }else{
+        return user;
+    }
+}
+
+function createUserHandler(req,res){
     const id = short.generate();// generate a new id when this cb/handler fn is called
     const userDetails = req.body;
     userDetails.id = id;
@@ -62,10 +78,9 @@ app.post("/api/user",function(req,res){
         status:"success",
         message:"got response from post method"
     })
-})
+}
 
-// to get user based on id -> template route
-app.get("/api/user/:userId",function(req,res){
+function getUserById(req,res){
     try{
         const userId = req.params.userId;
     const userDetails = getUserByid(userId);
@@ -83,18 +98,8 @@ app.get("/api/user/:userId",function(req,res){
             message:err.message
         })
     }
-})
-
-function getUserByid(id){
-    const user = userDataStore.find(user=>{
-        return user.id == id; 
-    })
-    if(user == undefined){
-        return "no user found";
-    }else{
-        return user;
-    }
 }
+
 
 app.use(function(req,res){
     res.status(200).json({

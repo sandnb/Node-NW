@@ -1,0 +1,21 @@
+{
+  "name": "day3",
+  "version": "1.0.0",
+  "main": "finalAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node finalAPI.js",
+    "dev": "nodemon finalAPI.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2",
+    "nodemon": "^3.1.7",
+    "short-uuid": "^5.2.0"
+  }
+}
