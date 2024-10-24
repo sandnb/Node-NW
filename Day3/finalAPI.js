@@ -133,17 +133,6 @@ async function getAllUsers(req,res){
          })
     }}
 
-/****Helper Function******/
-function getUserByid(id){
-    const user = userDataStore.find(user=>{
-        return user.id == id; 
-    })
-    if(user == undefined){
-        return "no user found";
-    }else{
-        return user;
-    }
-}
 
 
 app.use(function(req,res){
