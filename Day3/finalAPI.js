@@ -5,9 +5,6 @@ dotenv.config();
 const {PORT, DB_PASSWORD, DB_USER} = process.env;
 const app = express();
 
-
-
-
 const dbURL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.mwyhmyh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 //here our server is contacts DB in async mode
