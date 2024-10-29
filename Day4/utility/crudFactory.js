@@ -42,7 +42,7 @@ const getByIdFactory = (ElementModel)=>{
         try{
             const elementId = req.params.elementId;
         const elementDetails = await ElementModel.findById(elementId);
-        if(userDetails == "no user found"){
+        if(elementDetails == "no user found"){
             throw new Error(`user with ${elementId} not found`)
         }else{
             res.status(200).json({
