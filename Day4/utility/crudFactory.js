@@ -40,7 +40,7 @@ const createFactory = function(ElementModel){
 const getByIdFactory = (ElementModel)=>{
     return async function (req,res){
         try{
-            const elementId = req.params.userId;
+            const elementId = req.params.elementId;
         const elementDetails = await ElementModel.findById(elementId);
         if(userDetails == "no user found"){
             throw new Error(`user with ${elementId} not found`)
