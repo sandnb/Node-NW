@@ -53,8 +53,8 @@ const getAllProductHandler = async function (req,res){
 
 ProductRouter.get("/",getAllProductHandler);
 ProductRouter.post("/",createProductHandler);
-ProductRouter.get("/:productId",getProductById);
-ProductRouter.delete("/:productId",deleteProductById);
+ProductRouter.get("/:elementId",getProductById);
+ProductRouter.delete("/:elementId",deleteProductById);
 
 module.exports = ProductRouter;
 
