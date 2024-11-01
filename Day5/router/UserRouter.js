@@ -23,7 +23,7 @@ const checkInput = function(req,res,next){// checklist if we are sending the emp
 /********users*******/
 UserRouter.get("/",getAllUsers);
 UserRouter.post("/",checkInput,createUserHandler);
-UserRouter.get("/:userId",getUserById)
-UserRouter.delete("/:userId",deleteUserById);
+UserRouter.get("/:elementId",getUserById)
+UserRouter.delete("/:elementId",deleteUserById);
 
 module.exports = UserRouter;
