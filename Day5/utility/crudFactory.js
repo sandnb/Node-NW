@@ -40,7 +40,7 @@ const getByIdFactory = (ElementModel)=>{
         try{
             const elementId = req.params.elementId;
             const elementDetails = await ElementModel.findById(elementId);
-        if(elementDetails == "no element found"){
+        if(elementDetails == null){
             throw new Error(`element with ${elementId} not found`)
         }else{
             res.status(200).json({
